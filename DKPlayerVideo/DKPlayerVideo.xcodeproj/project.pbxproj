@@ -1,0 +1,906 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		440D018521BFA9EC0075AEB7 /* UIDevice+DKDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D018421BFA9EC0075AEB7 /* UIDevice+DKDevice.m */; };
+		4461F6CC216F43340051E942 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4461F6CB216F43340051E942 /* AppDelegate.m */; };
+		4461F6D2216F43340051E942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461F6D0216F43340051E942 /* Main.storyboard */; };
+		4461F6D4216F43360051E942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4461F6D3216F43360051E942 /* Assets.xcassets */; };
+		4461F6D7216F43360051E942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461F6D5216F43360051E942 /* LaunchScreen.storyboard */; };
+		4461F6DA216F43360051E942 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4461F6D9216F43360051E942 /* main.m */; };
+		44B5212021A3F780002CD444 /* DKEvaluateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5211F21A3F780002CD444 /* DKEvaluateViewController.m */; };
+		44B5212621A4051F002CD444 /* DKVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5212521A4051F002CD444 /* DKVideoView.m */; };
+		44B5212921A41BBE002CD444 /* DKBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5212821A41BBE002CD444 /* DKBaseTableViewCell.m */; };
+		44B5212C21A41BE8002CD444 /* DKEvaluateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5212B21A41BE8002CD444 /* DKEvaluateCell.m */; };
+		44B5212F21A426DF002CD444 /* DKReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5212E21A426DF002CD444 /* DKReplyCell.m */; };
+		44B5213221A6566C002CD444 /* DKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213121A6566C002CD444 /* DKTextView.m */; };
+		44B5215121ABF285002CD444 /* GKPushTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213521ABF285002CD444 /* GKPushTransitionAnimation.m */; };
+		44B5215221ABF285002CD444 /* GKDelegateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213621ABF285002CD444 /* GKDelegateHandler.m */; };
+		44B5215321ABF285002CD444 /* GKPopTransitionAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213721ABF285002CD444 /* GKPopTransitionAnimation.m */; };
+		44B5215421ABF285002CD444 /* UINavigationController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213C21ABF285002CD444 /* UINavigationController+GKCategory.m */; };
+		44B5215521ABF285002CD444 /* UIViewController+GKRotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213D21ABF285002CD444 /* UIViewController+GKRotation.m */; };
+		44B5215621ABF285002CD444 /* UIBarButtonItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5213F21ABF285002CD444 /* UIBarButtonItem+GKCategory.m */; };
+		44B5215721ABF285002CD444 /* UIScrollView+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5214121ABF285002CD444 /* UIScrollView+GKCategory.m */; };
+		44B5215821ABF285002CD444 /* UINavigationItem+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5214421ABF285002CD444 /* UINavigationItem+GKCategory.m */; };
+		44B5215921ABF285002CD444 /* UIViewController+GKCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5214821ABF285002CD444 /* UIViewController+GKCategory.m */; };
+		44B5215A21ABF285002CD444 /* GKNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5214B21ABF285002CD444 /* GKNavigationBar.m */; };
+		44B5215B21ABF285002CD444 /* GKNavigationBarViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 44B5214C21ABF285002CD444 /* GKNavigationBarViewController.bundle */; };
+		44B5215C21ABF285002CD444 /* GKNavigationBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5214D21ABF285002CD444 /* GKNavigationBarViewController.m */; };
+		44B5215D21ABF285002CD444 /* GKNavigationBarConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5215021ABF285002CD444 /* GKNavigationBarConfigure.m */; };
+		44B5216821AF924B002CD444 /* NSArray+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5216721AF924B002CD444 /* NSArray+Log.m */; };
+		44B5216B21AF9260002CD444 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5216A21AF9260002CD444 /* NSDictionary+Log.m */; };
+		44B5216E21AF9A29002CD444 /* DKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5216D21AF9A29002CD444 /* DKLoginViewController.m */; };
+		44C6F00F216F4603009FA80C /* DKWelfareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFBF216F4603009FA80C /* DKWelfareViewController.m */; };
+		44C6F010216F4603009FA80C /* VideoDataModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFC6216F4603009FA80C /* VideoDataModel.mm */; };
+		44C6F011216F4603009FA80C /* VideoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFC7216F4603009FA80C /* VideoInfoModel.m */; };
+		44C6F012216F4603009FA80C /* DKGameMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFCE216F4603009FA80C /* DKGameMainViewController.m */; };
+		44C6F016216F4603009FA80C /* DKViaWWANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFD4216F4603009FA80C /* DKViaWWANViewController.m */; };
+		44C6F017216F4603009FA80C /* DKVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFD5216F4603009FA80C /* DKVideoViewController.m */; };
+		44C6F018216F4603009FA80C /* DKVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFD9216F4603009FA80C /* DKVideoCell.m */; };
+		44C6F01A216F4603009FA80C /* DKProgramView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFDC216F4603009FA80C /* DKProgramView.m */; };
+		44C6F01B216F4603009FA80C /* DKGameMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFDE216F4603009FA80C /* DKGameMsgCell.m */; };
+		44C6F01C216F4603009FA80C /* QCXCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFE2216F4603009FA80C /* QCXCollectionViewLayout.m */; };
+		44C6F01E216F4603009FA80C /* DKGameGiftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFE5216F4603009FA80C /* DKGameGiftCell.m */; };
+		44C6F020216F4603009FA80C /* DKGameVideoListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFE9216F4603009FA80C /* DKGameVideoListCell.m */; };
+		44C6F021216F4603009FA80C /* DKVideoLeftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFEB216F4603009FA80C /* DKVideoLeftView.m */; };
+		44C6F023216F4603009FA80C /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF1216F4603009FA80C /* UIView+Frame.m */; };
+		44C6F024216F4603009FA80C /* UIViewController+InteractivePushGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF2216F4603009FA80C /* UIViewController+InteractivePushGesture.m */; };
+		44C6F025216F4603009FA80C /* UIButton+DKFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF3216F4603009FA80C /* UIButton+DKFont.m */; };
+		44C6F026216F4603009FA80C /* UIImage+DKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF4216F4603009FA80C /* UIImage+DKImage.m */; };
+		44C6F027216F4603009FA80C /* UILabel+MBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF5216F4603009FA80C /* UILabel+MBCategory.m */; };
+		44C6F028216F4603009FA80C /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF6216F4603009FA80C /* UIColor+Extension.m */; };
+		44C6F029216F4603009FA80C /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFFB216F4603009FA80C /* NetworkRequest.m */; };
+		44C6F02A216F4603009FA80C /* DKNetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFFC216F4603009FA80C /* DKNetInfo.m */; };
+		44C6F02B216F4603009FA80C /* DKMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F002216F4603009FA80C /* DKMineViewController.m */; };
+		44C6F02C216F4603009FA80C /* DKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F00B216F4603009FA80C /* DKTabBarViewController.m */; };
+		44C6F02D216F4603009FA80C /* DKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F00C216F4603009FA80C /* DKBaseViewController.m */; };
+		44C6F02E216F4603009FA80C /* DKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F00D216F4603009FA80C /* DKNavigationController.m */; };
+		44C6F030216F460D009FA80C /* video01.json in Resources */ = {isa = PBXBuildFile; fileRef = 44C6F02F216F460D009FA80C /* video01.json */; };
+		44C6F037217443C4009FA80C /* DKGameImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F036217443C4009FA80C /* DKGameImageCell.m */; };
+		E9AFEE170ECE9B3D73466635 /* libPods-DKPlayerVideo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42C444257A89C83A34421615 /* libPods-DKPlayerVideo.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42C444257A89C83A34421615 /* libPods-DKPlayerVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DKPlayerVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		440D018321BFA9EB0075AEB7 /* UIDevice+DKDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DKDevice.h"; sourceTree = "<group>"; };
+		440D018421BFA9EC0075AEB7 /* UIDevice+DKDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DKDevice.m"; sourceTree = "<group>"; };
+		4461F6C7216F43340051E942 /* DKPlayerVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKPlayerVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4461F6CA216F43340051E942 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4461F6CB216F43340051E942 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4461F6D1216F43340051E942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4461F6D3216F43360051E942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4461F6D6216F43360051E942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4461F6D8216F43360051E942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4461F6D9216F43360051E942 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		44B5211E21A3F780002CD444 /* DKEvaluateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKEvaluateViewController.h; sourceTree = "<group>"; };
+		44B5211F21A3F780002CD444 /* DKEvaluateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKEvaluateViewController.m; sourceTree = "<group>"; };
+		44B5212421A4051F002CD444 /* DKVideoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKVideoView.h; sourceTree = "<group>"; };
+		44B5212521A4051F002CD444 /* DKVideoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKVideoView.m; sourceTree = "<group>"; };
+		44B5212721A41BBE002CD444 /* DKBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKBaseTableViewCell.h; sourceTree = "<group>"; };
+		44B5212821A41BBE002CD444 /* DKBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKBaseTableViewCell.m; sourceTree = "<group>"; };
+		44B5212A21A41BE8002CD444 /* DKEvaluateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKEvaluateCell.h; sourceTree = "<group>"; };
+		44B5212B21A41BE8002CD444 /* DKEvaluateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKEvaluateCell.m; sourceTree = "<group>"; };
+		44B5212D21A426DF002CD444 /* DKReplyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKReplyCell.h; sourceTree = "<group>"; };
+		44B5212E21A426DF002CD444 /* DKReplyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKReplyCell.m; sourceTree = "<group>"; };
+		44B5213021A6566C002CD444 /* DKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKTextView.h; sourceTree = "<group>"; };
+		44B5213121A6566C002CD444 /* DKTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKTextView.m; sourceTree = "<group>"; };
+		44B5213521ABF285002CD444 /* GKPushTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPushTransitionAnimation.m; sourceTree = "<group>"; };
+		44B5213621ABF285002CD444 /* GKDelegateHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKDelegateHandler.m; sourceTree = "<group>"; };
+		44B5213721ABF285002CD444 /* GKPopTransitionAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKPopTransitionAnimation.m; sourceTree = "<group>"; };
+		44B5213821ABF285002CD444 /* GKPushTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPushTransitionAnimation.h; sourceTree = "<group>"; };
+		44B5213921ABF285002CD444 /* GKDelegateHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKDelegateHandler.h; sourceTree = "<group>"; };
+		44B5213A21ABF285002CD444 /* GKPopTransitionAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKPopTransitionAnimation.h; sourceTree = "<group>"; };
+		44B5213C21ABF285002CD444 /* UINavigationController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+GKCategory.m"; sourceTree = "<group>"; };
+		44B5213D21ABF285002CD444 /* UIViewController+GKRotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKRotation.m"; sourceTree = "<group>"; };
+		44B5213E21ABF285002CD444 /* UINavigationItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+GKCategory.h"; sourceTree = "<group>"; };
+		44B5213F21ABF285002CD444 /* UIBarButtonItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GKCategory.m"; sourceTree = "<group>"; };
+		44B5214021ABF285002CD444 /* UIViewController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKCategory.h"; sourceTree = "<group>"; };
+		44B5214121ABF285002CD444 /* UIScrollView+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+GKCategory.m"; sourceTree = "<group>"; };
+		44B5214221ABF285002CD444 /* GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCategory.h; sourceTree = "<group>"; };
+		44B5214321ABF285002CD444 /* UIViewController+GKRotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+GKRotation.h"; sourceTree = "<group>"; };
+		44B5214421ABF285002CD444 /* UINavigationItem+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+GKCategory.m"; sourceTree = "<group>"; };
+		44B5214521ABF285002CD444 /* UINavigationController+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+GKCategory.h"; sourceTree = "<group>"; };
+		44B5214621ABF285002CD444 /* UIBarButtonItem+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GKCategory.h"; sourceTree = "<group>"; };
+		44B5214721ABF285002CD444 /* UIScrollView+GKCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+GKCategory.h"; sourceTree = "<group>"; };
+		44B5214821ABF285002CD444 /* UIViewController+GKCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+GKCategory.m"; sourceTree = "<group>"; };
+		44B5214921ABF285002CD444 /* GKNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarViewController.h; sourceTree = "<group>"; };
+		44B5214A21ABF285002CD444 /* GKNavigationBarConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBarConfigure.h; sourceTree = "<group>"; };
+		44B5214B21ABF285002CD444 /* GKNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBar.m; sourceTree = "<group>"; };
+		44B5214C21ABF285002CD444 /* GKNavigationBarViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GKNavigationBarViewController.bundle; sourceTree = "<group>"; };
+		44B5214D21ABF285002CD444 /* GKNavigationBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarViewController.m; sourceTree = "<group>"; };
+		44B5214E21ABF285002CD444 /* GKCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKCommon.h; sourceTree = "<group>"; };
+		44B5214F21ABF285002CD444 /* GKNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKNavigationBar.h; sourceTree = "<group>"; };
+		44B5215021ABF285002CD444 /* GKNavigationBarConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKNavigationBarConfigure.m; sourceTree = "<group>"; };
+		44B5215F21AD507E002CD444 /* DKContentInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKContentInfo.h; sourceTree = "<group>"; };
+		44B5216421AF83E2002CD444 /* DKAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKAPI.h; sourceTree = "<group>"; };
+		44B5216621AF924B002CD444 /* NSArray+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Log.h"; sourceTree = "<group>"; };
+		44B5216721AF924B002CD444 /* NSArray+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Log.m"; sourceTree = "<group>"; };
+		44B5216921AF9260002CD444 /* NSDictionary+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
+		44B5216A21AF9260002CD444 /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
+		44B5216C21AF9A29002CD444 /* DKLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKLoginViewController.h; sourceTree = "<group>"; };
+		44B5216D21AF9A29002CD444 /* DKLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKLoginViewController.m; sourceTree = "<group>"; };
+		44C6EFBF216F4603009FA80C /* DKWelfareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKWelfareViewController.m; sourceTree = "<group>"; };
+		44C6EFC0216F4603009FA80C /* DKWelfareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKWelfareViewController.h; sourceTree = "<group>"; };
+		44C6EFC4216F4603009FA80C /* VideoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoInfoModel.h; sourceTree = "<group>"; };
+		44C6EFC5216F4603009FA80C /* VideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDataModel.h; sourceTree = "<group>"; };
+		44C6EFC6216F4603009FA80C /* VideoDataModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoDataModel.mm; sourceTree = "<group>"; };
+		44C6EFC7216F4603009FA80C /* VideoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoInfoModel.m; sourceTree = "<group>"; };
+		44C6EFC9216F4603009FA80C /* DKVideoListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoListInfo.h; sourceTree = "<group>"; };
+		44C6EFCC216F4603009FA80C /* DKVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoViewController.h; sourceTree = "<group>"; };
+		44C6EFCD216F4603009FA80C /* DKViaWWANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKViaWWANViewController.h; sourceTree = "<group>"; };
+		44C6EFCE216F4603009FA80C /* DKGameMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKGameMainViewController.m; sourceTree = "<group>"; };
+		44C6EFD3216F4603009FA80C /* DKGameMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKGameMainViewController.h; sourceTree = "<group>"; };
+		44C6EFD4216F4603009FA80C /* DKViaWWANViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKViaWWANViewController.m; sourceTree = "<group>"; };
+		44C6EFD5216F4603009FA80C /* DKVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKVideoViewController.m; sourceTree = "<group>"; };
+		44C6EFD9216F4603009FA80C /* DKVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKVideoCell.m; sourceTree = "<group>"; };
+		44C6EFDA216F4603009FA80C /* QCXCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCXCollectionViewLayout.h; sourceTree = "<group>"; };
+		44C6EFDC216F4603009FA80C /* DKProgramView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKProgramView.m; sourceTree = "<group>"; };
+		44C6EFDD216F4603009FA80C /* DKGameGiftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKGameGiftCell.h; sourceTree = "<group>"; };
+		44C6EFDE216F4603009FA80C /* DKGameMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKGameMsgCell.m; sourceTree = "<group>"; };
+		44C6EFDF216F4603009FA80C /* DKGameVideoListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKGameVideoListCell.h; sourceTree = "<group>"; };
+		44C6EFE1216F4603009FA80C /* DKVideoLeftView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoLeftView.h; sourceTree = "<group>"; };
+		44C6EFE2216F4603009FA80C /* QCXCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCXCollectionViewLayout.m; sourceTree = "<group>"; };
+		44C6EFE3216F4603009FA80C /* DKVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoCell.h; sourceTree = "<group>"; };
+		44C6EFE5216F4603009FA80C /* DKGameGiftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKGameGiftCell.m; sourceTree = "<group>"; };
+		44C6EFE6216F4603009FA80C /* DKProgramView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKProgramView.h; sourceTree = "<group>"; };
+		44C6EFE9216F4603009FA80C /* DKGameVideoListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKGameVideoListCell.m; sourceTree = "<group>"; };
+		44C6EFEA216F4603009FA80C /* DKGameMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKGameMsgCell.h; sourceTree = "<group>"; };
+		44C6EFEB216F4603009FA80C /* DKVideoLeftView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKVideoLeftView.m; sourceTree = "<group>"; };
+		44C6EFEE216F4603009FA80C /* UIImage+DKImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DKImage.h"; sourceTree = "<group>"; };
+		44C6EFEF216F4603009FA80C /* UIColor+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Extension.h"; sourceTree = "<group>"; };
+		44C6EFF0216F4603009FA80C /* UILabel+MBCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+MBCategory.h"; sourceTree = "<group>"; };
+		44C6EFF1216F4603009FA80C /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		44C6EFF2216F4603009FA80C /* UIViewController+InteractivePushGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+InteractivePushGesture.m"; sourceTree = "<group>"; };
+		44C6EFF3216F4603009FA80C /* UIButton+DKFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DKFont.m"; sourceTree = "<group>"; };
+		44C6EFF4216F4603009FA80C /* UIImage+DKImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DKImage.m"; sourceTree = "<group>"; };
+		44C6EFF5216F4603009FA80C /* UILabel+MBCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+MBCategory.m"; sourceTree = "<group>"; };
+		44C6EFF6216F4603009FA80C /* UIColor+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Extension.m"; sourceTree = "<group>"; };
+		44C6EFF7216F4603009FA80C /* UIButton+DKFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DKFont.h"; sourceTree = "<group>"; };
+		44C6EFF8216F4603009FA80C /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
+		44C6EFF9216F4603009FA80C /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		44C6EFFB216F4603009FA80C /* NetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
+		44C6EFFC216F4603009FA80C /* DKNetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNetInfo.m; sourceTree = "<group>"; };
+		44C6EFFD216F4603009FA80C /* NetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
+		44C6EFFE216F4603009FA80C /* DKNetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNetInfo.h; sourceTree = "<group>"; };
+		44C6F002216F4603009FA80C /* DKMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMineViewController.m; sourceTree = "<group>"; };
+		44C6F003216F4603009FA80C /* DKMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMineViewController.h; sourceTree = "<group>"; };
+		44C6F008216F4603009FA80C /* DKTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTabBarViewController.h; sourceTree = "<group>"; };
+		44C6F009216F4603009FA80C /* DKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBaseViewController.h; sourceTree = "<group>"; };
+		44C6F00A216F4603009FA80C /* DKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNavigationController.h; sourceTree = "<group>"; };
+		44C6F00B216F4603009FA80C /* DKTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKTabBarViewController.m; sourceTree = "<group>"; };
+		44C6F00C216F4603009FA80C /* DKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBaseViewController.m; sourceTree = "<group>"; };
+		44C6F00D216F4603009FA80C /* DKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNavigationController.m; sourceTree = "<group>"; };
+		44C6F02F216F460D009FA80C /* video01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video01.json; sourceTree = "<group>"; };
+		44C6F031216F4621009FA80C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		44C6F035217443C4009FA80C /* DKGameImageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKGameImageCell.h; sourceTree = "<group>"; };
+		44C6F036217443C4009FA80C /* DKGameImageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKGameImageCell.m; sourceTree = "<group>"; };
+		6C193824FBFEFF3B5B5C3549 /* Pods-DKPlayerVideo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DKPlayerVideo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DKPlayerVideo/Pods-DKPlayerVideo.release.xcconfig"; sourceTree = "<group>"; };
+		FCA32AD9CF07ED79CC111429 /* Pods-DKPlayerVideo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DKPlayerVideo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DKPlayerVideo/Pods-DKPlayerVideo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4461F6C4216F43340051E942 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9AFEE170ECE9B3D73466635 /* libPods-DKPlayerVideo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4461F6BE216F43340051E942 = {
+			isa = PBXGroup;
+			children = (
+				4461F6C9216F43340051E942 /* DKPlayerVideo */,
+				4461F6C8216F43340051E942 /* Products */,
+				AF3EAC36C0BAFD93094D2D71 /* Pods */,
+				955BEA23B665980D589314B0 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4461F6C8216F43340051E942 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4461F6C7216F43340051E942 /* DKPlayerVideo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4461F6C9216F43340051E942 /* DKPlayerVideo */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F02F216F460D009FA80C /* video01.json */,
+				4461F6CA216F43340051E942 /* AppDelegate.h */,
+				4461F6CB216F43340051E942 /* AppDelegate.m */,
+				44C6EFBB216F4603009FA80C /* Classes */,
+				4461F6D0216F43340051E942 /* Main.storyboard */,
+				4461F6D3216F43360051E942 /* Assets.xcassets */,
+				4461F6D5216F43360051E942 /* LaunchScreen.storyboard */,
+				4461F6D8216F43360051E942 /* Info.plist */,
+				4461F6D9216F43360051E942 /* main.m */,
+				44C6F031216F4621009FA80C /* PrefixHeader.pch */,
+			);
+			path = DKPlayerVideo;
+			sourceTree = "<group>";
+		};
+		44B5213321ABF285002CD444 /* GKNavigationBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				44B5213421ABF285002CD444 /* TransitionAnimation */,
+				44B5213B21ABF285002CD444 /* Category */,
+				44B5214921ABF285002CD444 /* GKNavigationBarViewController.h */,
+				44B5214A21ABF285002CD444 /* GKNavigationBarConfigure.h */,
+				44B5214B21ABF285002CD444 /* GKNavigationBar.m */,
+				44B5214C21ABF285002CD444 /* GKNavigationBarViewController.bundle */,
+				44B5214D21ABF285002CD444 /* GKNavigationBarViewController.m */,
+				44B5214E21ABF285002CD444 /* GKCommon.h */,
+				44B5214F21ABF285002CD444 /* GKNavigationBar.h */,
+				44B5215021ABF285002CD444 /* GKNavigationBarConfigure.m */,
+			);
+			path = GKNavigationBarViewController;
+			sourceTree = "<group>";
+		};
+		44B5213421ABF285002CD444 /* TransitionAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				44B5213521ABF285002CD444 /* GKPushTransitionAnimation.m */,
+				44B5213621ABF285002CD444 /* GKDelegateHandler.m */,
+				44B5213721ABF285002CD444 /* GKPopTransitionAnimation.m */,
+				44B5213821ABF285002CD444 /* GKPushTransitionAnimation.h */,
+				44B5213921ABF285002CD444 /* GKDelegateHandler.h */,
+				44B5213A21ABF285002CD444 /* GKPopTransitionAnimation.h */,
+			);
+			path = TransitionAnimation;
+			sourceTree = "<group>";
+		};
+		44B5213B21ABF285002CD444 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				44B5213C21ABF285002CD444 /* UINavigationController+GKCategory.m */,
+				44B5213D21ABF285002CD444 /* UIViewController+GKRotation.m */,
+				44B5213E21ABF285002CD444 /* UINavigationItem+GKCategory.h */,
+				44B5213F21ABF285002CD444 /* UIBarButtonItem+GKCategory.m */,
+				44B5214021ABF285002CD444 /* UIViewController+GKCategory.h */,
+				44B5214121ABF285002CD444 /* UIScrollView+GKCategory.m */,
+				44B5214221ABF285002CD444 /* GKCategory.h */,
+				44B5214321ABF285002CD444 /* UIViewController+GKRotation.h */,
+				44B5214421ABF285002CD444 /* UINavigationItem+GKCategory.m */,
+				44B5214521ABF285002CD444 /* UINavigationController+GKCategory.h */,
+				44B5214621ABF285002CD444 /* UIBarButtonItem+GKCategory.h */,
+				44B5214721ABF285002CD444 /* UIScrollView+GKCategory.h */,
+				44B5214821ABF285002CD444 /* UIViewController+GKCategory.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		44B5216521AF9231002CD444 /* Log */ = {
+			isa = PBXGroup;
+			children = (
+				44B5216621AF924B002CD444 /* NSArray+Log.h */,
+				44B5216721AF924B002CD444 /* NSArray+Log.m */,
+				44B5216921AF9260002CD444 /* NSDictionary+Log.h */,
+				44B5216A21AF9260002CD444 /* NSDictionary+Log.m */,
+			);
+			path = Log;
+			sourceTree = "<group>";
+		};
+		44C6EFBB216F4603009FA80C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F005216F4603009FA80C /* Base */,
+				44C6EFC2216F4603009FA80C /* Video */,
+				44C6EFBC216F4603009FA80C /* welfare */,
+				44C6EFFF216F4603009FA80C /* Mine */,
+				44C6EFED216F4603009FA80C /* Category */,
+				44C6EFFA216F4603009FA80C /* OthetInfo */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		44C6EFBC216F4603009FA80C /* welfare */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFBD216F4603009FA80C /* Models */,
+				44C6EFBE216F4603009FA80C /* Controllers */,
+				44C6EFC1216F4603009FA80C /* Views */,
+			);
+			path = welfare;
+			sourceTree = "<group>";
+		};
+		44C6EFBD216F4603009FA80C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44C6EFBE216F4603009FA80C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFBF216F4603009FA80C /* DKWelfareViewController.m */,
+				44C6EFC0216F4603009FA80C /* DKWelfareViewController.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C6EFC1216F4603009FA80C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44C6EFC2216F4603009FA80C /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFC3216F4603009FA80C /* Models */,
+				44C6EFC8216F4603009FA80C /* Info */,
+				44C6EFCA216F4603009FA80C /* Controllers */,
+				44C6EFD7216F4603009FA80C /* Views */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		44C6EFC3216F4603009FA80C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFC5216F4603009FA80C /* VideoDataModel.h */,
+				44C6EFC6216F4603009FA80C /* VideoDataModel.mm */,
+				44C6EFC4216F4603009FA80C /* VideoInfoModel.h */,
+				44C6EFC7216F4603009FA80C /* VideoInfoModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44C6EFC8216F4603009FA80C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFC9216F4603009FA80C /* DKVideoListInfo.h */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		44C6EFCA216F4603009FA80C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFCC216F4603009FA80C /* DKVideoViewController.h */,
+				44C6EFD5216F4603009FA80C /* DKVideoViewController.m */,
+				44B5211E21A3F780002CD444 /* DKEvaluateViewController.h */,
+				44B5211F21A3F780002CD444 /* DKEvaluateViewController.m */,
+				44C6EFCD216F4603009FA80C /* DKViaWWANViewController.h */,
+				44C6EFD4216F4603009FA80C /* DKViaWWANViewController.m */,
+				44C6EFD3216F4603009FA80C /* DKGameMainViewController.h */,
+				44C6EFCE216F4603009FA80C /* DKGameMainViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C6EFD7216F4603009FA80C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44B5212421A4051F002CD444 /* DKVideoView.h */,
+				44B5212521A4051F002CD444 /* DKVideoView.m */,
+				44C6EFE3216F4603009FA80C /* DKVideoCell.h */,
+				44C6EFD9216F4603009FA80C /* DKVideoCell.m */,
+				44C6EFDA216F4603009FA80C /* QCXCollectionViewLayout.h */,
+				44C6EFE2216F4603009FA80C /* QCXCollectionViewLayout.m */,
+				44C6EFE6216F4603009FA80C /* DKProgramView.h */,
+				44C6EFDC216F4603009FA80C /* DKProgramView.m */,
+				44C6EFDD216F4603009FA80C /* DKGameGiftCell.h */,
+				44C6EFE5216F4603009FA80C /* DKGameGiftCell.m */,
+				44C6EFEA216F4603009FA80C /* DKGameMsgCell.h */,
+				44C6EFDE216F4603009FA80C /* DKGameMsgCell.m */,
+				44C6EFDF216F4603009FA80C /* DKGameVideoListCell.h */,
+				44C6EFE9216F4603009FA80C /* DKGameVideoListCell.m */,
+				44C6F035217443C4009FA80C /* DKGameImageCell.h */,
+				44C6F036217443C4009FA80C /* DKGameImageCell.m */,
+				44C6EFE1216F4603009FA80C /* DKVideoLeftView.h */,
+				44C6EFEB216F4603009FA80C /* DKVideoLeftView.m */,
+				44B5212A21A41BE8002CD444 /* DKEvaluateCell.h */,
+				44B5212B21A41BE8002CD444 /* DKEvaluateCell.m */,
+				44B5212D21A426DF002CD444 /* DKReplyCell.h */,
+				44B5212E21A426DF002CD444 /* DKReplyCell.m */,
+				44B5213021A6566C002CD444 /* DKTextView.h */,
+				44B5213121A6566C002CD444 /* DKTextView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44C6EFED216F4603009FA80C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				44B5216521AF9231002CD444 /* Log */,
+				44C6EFEE216F4603009FA80C /* UIImage+DKImage.h */,
+				44C6EFF4216F4603009FA80C /* UIImage+DKImage.m */,
+				44C6EFEF216F4603009FA80C /* UIColor+Extension.h */,
+				44C6EFF6216F4603009FA80C /* UIColor+Extension.m */,
+				44C6EFF0216F4603009FA80C /* UILabel+MBCategory.h */,
+				44C6EFF5216F4603009FA80C /* UILabel+MBCategory.m */,
+				44C6EFF7216F4603009FA80C /* UIButton+DKFont.h */,
+				44C6EFF3216F4603009FA80C /* UIButton+DKFont.m */,
+				44C6EFF8216F4603009FA80C /* UIViewController+InteractivePushGesture.h */,
+				44C6EFF2216F4603009FA80C /* UIViewController+InteractivePushGesture.m */,
+				44C6EFF9216F4603009FA80C /* UIView+Frame.h */,
+				44C6EFF1216F4603009FA80C /* UIView+Frame.m */,
+				440D018321BFA9EB0075AEB7 /* UIDevice+DKDevice.h */,
+				440D018421BFA9EC0075AEB7 /* UIDevice+DKDevice.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		44C6EFFA216F4603009FA80C /* OthetInfo */ = {
+			isa = PBXGroup;
+			children = (
+				44C6EFFD216F4603009FA80C /* NetworkRequest.h */,
+				44C6EFFB216F4603009FA80C /* NetworkRequest.m */,
+				44C6EFFE216F4603009FA80C /* DKNetInfo.h */,
+				44C6EFFC216F4603009FA80C /* DKNetInfo.m */,
+				44B5215F21AD507E002CD444 /* DKContentInfo.h */,
+				44B5216421AF83E2002CD444 /* DKAPI.h */,
+			);
+			path = OthetInfo;
+			sourceTree = "<group>";
+		};
+		44C6EFFF216F4603009FA80C /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F000216F4603009FA80C /* Models */,
+				44C6F001216F4603009FA80C /* Controllers */,
+				44C6F004216F4603009FA80C /* Views */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		44C6F000216F4603009FA80C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44C6F001216F4603009FA80C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F003216F4603009FA80C /* DKMineViewController.h */,
+				44C6F002216F4603009FA80C /* DKMineViewController.m */,
+				44B5216C21AF9A29002CD444 /* DKLoginViewController.h */,
+				44B5216D21AF9A29002CD444 /* DKLoginViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C6F004216F4603009FA80C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		44C6F005216F4603009FA80C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F006216F4603009FA80C /* Models */,
+				44C6F007216F4603009FA80C /* Controllers */,
+				44C6F00E216F4603009FA80C /* Views */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		44C6F006216F4603009FA80C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		44C6F007216F4603009FA80C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				44C6F009216F4603009FA80C /* DKBaseViewController.h */,
+				44C6F00C216F4603009FA80C /* DKBaseViewController.m */,
+				44C6F00A216F4603009FA80C /* DKNavigationController.h */,
+				44C6F00D216F4603009FA80C /* DKNavigationController.m */,
+				44C6F008216F4603009FA80C /* DKTabBarViewController.h */,
+				44C6F00B216F4603009FA80C /* DKTabBarViewController.m */,
+				44B5213321ABF285002CD444 /* GKNavigationBarViewController */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		44C6F00E216F4603009FA80C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				44B5212721A41BBE002CD444 /* DKBaseTableViewCell.h */,
+				44B5212821A41BBE002CD444 /* DKBaseTableViewCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		955BEA23B665980D589314B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42C444257A89C83A34421615 /* libPods-DKPlayerVideo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF3EAC36C0BAFD93094D2D71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCA32AD9CF07ED79CC111429 /* Pods-DKPlayerVideo.debug.xcconfig */,
+				6C193824FBFEFF3B5B5C3549 /* Pods-DKPlayerVideo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4461F6C6216F43340051E942 /* DKPlayerVideo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4461F6DD216F43360051E942 /* Build configuration list for PBXNativeTarget "DKPlayerVideo" */;
+			buildPhases = (
+				E9E4476D129AECB0A27ED7A3 /* [CP] Check Pods Manifest.lock */,
+				4461F6C3216F43340051E942 /* Sources */,
+				4461F6C4216F43340051E942 /* Frameworks */,
+				4461F6C5216F43340051E942 /* Resources */,
+				0273F3174FEFB9B5221E4071 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DKPlayerVideo;
+			productName = DKPlayerVideo;
+			productReference = 4461F6C7216F43340051E942 /* DKPlayerVideo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4461F6BF216F43340051E942 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DK;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "乔春晓";
+				TargetAttributes = {
+					4461F6C6216F43340051E942 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 4461F6C2216F43340051E942 /* Build configuration list for PBXProject "DKPlayerVideo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4461F6BE216F43340051E942;
+			productRefGroup = 4461F6C8216F43340051E942 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4461F6C6216F43340051E942 /* DKPlayerVideo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4461F6C5216F43340051E942 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44B5215B21ABF285002CD444 /* GKNavigationBarViewController.bundle in Resources */,
+				44C6F030216F460D009FA80C /* video01.json in Resources */,
+				4461F6D7216F43360051E942 /* LaunchScreen.storyboard in Resources */,
+				4461F6D4216F43360051E942 /* Assets.xcassets in Resources */,
+				4461F6D2216F43340051E942 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0273F3174FEFB9B5221E4071 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DKPlayerVideo/Pods-DKPlayerVideo-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DKPlayerVideo/Pods-DKPlayerVideo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9E4476D129AECB0A27ED7A3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DKPlayerVideo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4461F6C3216F43340051E942 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44C6F029216F4603009FA80C /* NetworkRequest.m in Sources */,
+				44B5213221A6566C002CD444 /* DKTextView.m in Sources */,
+				44C6F024216F4603009FA80C /* UIViewController+InteractivePushGesture.m in Sources */,
+				440D018521BFA9EC0075AEB7 /* UIDevice+DKDevice.m in Sources */,
+				44B5215321ABF285002CD444 /* GKPopTransitionAnimation.m in Sources */,
+				44B5215D21ABF285002CD444 /* GKNavigationBarConfigure.m in Sources */,
+				44C6F023216F4603009FA80C /* UIView+Frame.m in Sources */,
+				44C6F028216F4603009FA80C /* UIColor+Extension.m in Sources */,
+				44C6F012216F4603009FA80C /* DKGameMainViewController.m in Sources */,
+				44C6F01E216F4603009FA80C /* DKGameGiftCell.m in Sources */,
+				44B5215921ABF285002CD444 /* UIViewController+GKCategory.m in Sources */,
+				4461F6DA216F43360051E942 /* main.m in Sources */,
+				44B5215621ABF285002CD444 /* UIBarButtonItem+GKCategory.m in Sources */,
+				44C6F025216F4603009FA80C /* UIButton+DKFont.m in Sources */,
+				44C6F020216F4603009FA80C /* DKGameVideoListCell.m in Sources */,
+				44B5212621A4051F002CD444 /* DKVideoView.m in Sources */,
+				44C6F018216F4603009FA80C /* DKVideoCell.m in Sources */,
+				44B5215821ABF285002CD444 /* UINavigationItem+GKCategory.m in Sources */,
+				44B5212F21A426DF002CD444 /* DKReplyCell.m in Sources */,
+				44C6F017216F4603009FA80C /* DKVideoViewController.m in Sources */,
+				44C6F02C216F4603009FA80C /* DKTabBarViewController.m in Sources */,
+				44B5216821AF924B002CD444 /* NSArray+Log.m in Sources */,
+				44C6F01B216F4603009FA80C /* DKGameMsgCell.m in Sources */,
+				44B5215721ABF285002CD444 /* UIScrollView+GKCategory.m in Sources */,
+				44B5216B21AF9260002CD444 /* NSDictionary+Log.m in Sources */,
+				44C6F02A216F4603009FA80C /* DKNetInfo.m in Sources */,
+				44C6F01C216F4603009FA80C /* QCXCollectionViewLayout.m in Sources */,
+				44B5212C21A41BE8002CD444 /* DKEvaluateCell.m in Sources */,
+				44C6F00F216F4603009FA80C /* DKWelfareViewController.m in Sources */,
+				44C6F02D216F4603009FA80C /* DKBaseViewController.m in Sources */,
+				44C6F02E216F4603009FA80C /* DKNavigationController.m in Sources */,
+				44C6F026216F4603009FA80C /* UIImage+DKImage.m in Sources */,
+				44B5212021A3F780002CD444 /* DKEvaluateViewController.m in Sources */,
+				44C6F011216F4603009FA80C /* VideoInfoModel.m in Sources */,
+				44C6F037217443C4009FA80C /* DKGameImageCell.m in Sources */,
+				44B5215C21ABF285002CD444 /* GKNavigationBarViewController.m in Sources */,
+				44B5215221ABF285002CD444 /* GKDelegateHandler.m in Sources */,
+				44B5215121ABF285002CD444 /* GKPushTransitionAnimation.m in Sources */,
+				44B5215A21ABF285002CD444 /* GKNavigationBar.m in Sources */,
+				44C6F021216F4603009FA80C /* DKVideoLeftView.m in Sources */,
+				4461F6CC216F43340051E942 /* AppDelegate.m in Sources */,
+				44B5216E21AF9A29002CD444 /* DKLoginViewController.m in Sources */,
+				44C6F01A216F4603009FA80C /* DKProgramView.m in Sources */,
+				44C6F010216F4603009FA80C /* VideoDataModel.mm in Sources */,
+				44B5215521ABF285002CD444 /* UIViewController+GKRotation.m in Sources */,
+				44C6F027216F4603009FA80C /* UILabel+MBCategory.m in Sources */,
+				44B5212921A41BBE002CD444 /* DKBaseTableViewCell.m in Sources */,
+				44C6F02B216F4603009FA80C /* DKMineViewController.m in Sources */,
+				44B5215421ABF285002CD444 /* UINavigationController+GKCategory.m in Sources */,
+				44C6F016216F4603009FA80C /* DKViaWWANViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4461F6D0216F43340051E942 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4461F6D1216F43340051E942 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4461F6D5216F43360051E942 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4461F6D6216F43360051E942 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4461F6DB216F43360051E942 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4461F6DC216F43360051E942 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4461F6DE216F43360051E942 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FCA32AD9CF07ED79CC111429 /* Pods-DKPlayerVideo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GNUJ2CS6SK;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DKPlayerVideo/PrefixHeader.pch";
+				INFOPLIST_FILE = DKPlayerVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QCX.DKPlayerVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4461F6DF216F43360051E942 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C193824FBFEFF3B5B5C3549 /* Pods-DKPlayerVideo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GNUJ2CS6SK;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/DKPlayerVideo/PrefixHeader.pch";
+				INFOPLIST_FILE = DKPlayerVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = QCX.DKPlayerVideo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4461F6C2216F43340051E942 /* Build configuration list for PBXProject "DKPlayerVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4461F6DB216F43360051E942 /* Debug */,
+				4461F6DC216F43360051E942 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4461F6DD216F43360051E942 /* Build configuration list for PBXNativeTarget "DKPlayerVideo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4461F6DE216F43360051E942 /* Debug */,
+				4461F6DF216F43360051E942 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4461F6BF216F43340051E942 /* Project object */;
+}
