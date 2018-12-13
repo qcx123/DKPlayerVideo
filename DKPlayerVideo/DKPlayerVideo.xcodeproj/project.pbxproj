@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		440D018521BFA9EC0075AEB7 /* UIDevice+DKDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D018421BFA9EC0075AEB7 /* UIDevice+DKDevice.m */; };
+		440D019021C0BAC10075AEB7 /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D018A21C0BAC10075AEB7 /* NetworkRequest.m */; };
+		440D019121C0BAC10075AEB7 /* DKBaseNetProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D018B21C0BAC10075AEB7 /* DKBaseNetProtocol.m */; };
+		440D019221C0BAC10075AEB7 /* DKNetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D018C21C0BAC10075AEB7 /* DKNetInfo.m */; };
+		440D019921C0E8A80075AEB7 /* DKVideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D019821C0E8A80075AEB7 /* DKVideoModel.m */; };
+		440D019D21C2306A0075AEB7 /* DKRegularVerifyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D019C21C2306A0075AEB7 /* DKRegularVerifyUtil.m */; };
+		440D01A821C236F70075AEB7 /* UIViewController+DKToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D01A721C236F70075AEB7 /* UIViewController+DKToast.m */; };
+		440D01AC21C238A30075AEB7 /* DKDeviceInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D01AA21C238A30075AEB7 /* DKDeviceInfo.m */; };
+		440D01AF21C2416F0075AEB7 /* DKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D01AE21C2416F0075AEB7 /* DKUser.m */; };
+		440D01B321C268E80075AEB7 /* YPDouYinLikeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 440D01B221C268E80075AEB7 /* YPDouYinLikeAnimation.m */; };
+		440D01B621C26A500075AEB7 /* yp_video_like@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 440D01B421C26A500075AEB7 /* yp_video_like@2x.png */; };
+		440D01B721C26A500075AEB7 /* yp_video_like@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 440D01B521C26A500075AEB7 /* yp_video_like@3x.png */; };
 		4461F6CC216F43340051E942 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4461F6CB216F43340051E942 /* AppDelegate.m */; };
 		4461F6D2216F43340051E942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4461F6D0216F43340051E942 /* Main.storyboard */; };
 		4461F6D4216F43360051E942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4461F6D3216F43360051E942 /* Assets.xcassets */; };
@@ -36,8 +47,6 @@
 		44B5216B21AF9260002CD444 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5216A21AF9260002CD444 /* NSDictionary+Log.m */; };
 		44B5216E21AF9A29002CD444 /* DKLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44B5216D21AF9A29002CD444 /* DKLoginViewController.m */; };
 		44C6F00F216F4603009FA80C /* DKWelfareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFBF216F4603009FA80C /* DKWelfareViewController.m */; };
-		44C6F010216F4603009FA80C /* VideoDataModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFC6216F4603009FA80C /* VideoDataModel.mm */; };
-		44C6F011216F4603009FA80C /* VideoInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFC7216F4603009FA80C /* VideoInfoModel.m */; };
 		44C6F012216F4603009FA80C /* DKGameMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFCE216F4603009FA80C /* DKGameMainViewController.m */; };
 		44C6F016216F4603009FA80C /* DKViaWWANViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFD4216F4603009FA80C /* DKViaWWANViewController.m */; };
 		44C6F017216F4603009FA80C /* DKVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFD5216F4603009FA80C /* DKVideoViewController.m */; };
@@ -54,8 +63,6 @@
 		44C6F026216F4603009FA80C /* UIImage+DKImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF4216F4603009FA80C /* UIImage+DKImage.m */; };
 		44C6F027216F4603009FA80C /* UILabel+MBCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF5216F4603009FA80C /* UILabel+MBCategory.m */; };
 		44C6F028216F4603009FA80C /* UIColor+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFF6216F4603009FA80C /* UIColor+Extension.m */; };
-		44C6F029216F4603009FA80C /* NetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFFB216F4603009FA80C /* NetworkRequest.m */; };
-		44C6F02A216F4603009FA80C /* DKNetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6EFFC216F4603009FA80C /* DKNetInfo.m */; };
 		44C6F02B216F4603009FA80C /* DKMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F002216F4603009FA80C /* DKMineViewController.m */; };
 		44C6F02C216F4603009FA80C /* DKTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F00B216F4603009FA80C /* DKTabBarViewController.m */; };
 		44C6F02D216F4603009FA80C /* DKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44C6F00C216F4603009FA80C /* DKBaseViewController.m */; };
@@ -69,6 +76,28 @@
 		42C444257A89C83A34421615 /* libPods-DKPlayerVideo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DKPlayerVideo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		440D018321BFA9EB0075AEB7 /* UIDevice+DKDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+DKDevice.h"; sourceTree = "<group>"; };
 		440D018421BFA9EC0075AEB7 /* UIDevice+DKDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+DKDevice.m"; sourceTree = "<group>"; };
+		440D018A21C0BAC10075AEB7 /* NetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
+		440D018B21C0BAC10075AEB7 /* DKBaseNetProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKBaseNetProtocol.m; sourceTree = "<group>"; };
+		440D018C21C0BAC10075AEB7 /* DKNetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNetInfo.m; sourceTree = "<group>"; };
+		440D018D21C0BAC10075AEB7 /* DKBaseNetProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKBaseNetProtocol.h; sourceTree = "<group>"; };
+		440D018E21C0BAC10075AEB7 /* NetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
+		440D018F21C0BAC10075AEB7 /* DKNetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNetInfo.h; sourceTree = "<group>"; };
+		440D019621C0E37F0075AEB7 /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		440D019721C0E8A80075AEB7 /* DKVideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKVideoModel.h; sourceTree = "<group>"; };
+		440D019821C0E8A80075AEB7 /* DKVideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKVideoModel.m; sourceTree = "<group>"; };
+		440D019B21C2306A0075AEB7 /* DKRegularVerifyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKRegularVerifyUtil.h; sourceTree = "<group>"; };
+		440D019C21C2306A0075AEB7 /* DKRegularVerifyUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKRegularVerifyUtil.m; sourceTree = "<group>"; };
+		440D01A621C236F70075AEB7 /* UIViewController+DKToast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DKToast.h"; sourceTree = "<group>"; };
+		440D01A721C236F70075AEB7 /* UIViewController+DKToast.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DKToast.m"; sourceTree = "<group>"; };
+		440D01A921C238390075AEB7 /* ViewConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewConstant.h; sourceTree = "<group>"; };
+		440D01AA21C238A30075AEB7 /* DKDeviceInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKDeviceInfo.m; sourceTree = "<group>"; };
+		440D01AB21C238A30075AEB7 /* DKDeviceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKDeviceInfo.h; sourceTree = "<group>"; };
+		440D01AD21C2416F0075AEB7 /* DKUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DKUser.h; sourceTree = "<group>"; };
+		440D01AE21C2416F0075AEB7 /* DKUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKUser.m; sourceTree = "<group>"; };
+		440D01B121C268E80075AEB7 /* YPDouYinLikeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YPDouYinLikeAnimation.h; sourceTree = "<group>"; };
+		440D01B221C268E80075AEB7 /* YPDouYinLikeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YPDouYinLikeAnimation.m; sourceTree = "<group>"; };
+		440D01B421C26A500075AEB7 /* yp_video_like@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yp_video_like@2x.png"; sourceTree = "<group>"; };
+		440D01B521C26A500075AEB7 /* yp_video_like@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yp_video_like@3x.png"; sourceTree = "<group>"; };
 		4461F6C7216F43340051E942 /* DKPlayerVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DKPlayerVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4461F6CA216F43340051E942 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4461F6CB216F43340051E942 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -126,11 +155,6 @@
 		44B5216D21AF9A29002CD444 /* DKLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DKLoginViewController.m; sourceTree = "<group>"; };
 		44C6EFBF216F4603009FA80C /* DKWelfareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKWelfareViewController.m; sourceTree = "<group>"; };
 		44C6EFC0216F4603009FA80C /* DKWelfareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKWelfareViewController.h; sourceTree = "<group>"; };
-		44C6EFC4216F4603009FA80C /* VideoInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoInfoModel.h; sourceTree = "<group>"; };
-		44C6EFC5216F4603009FA80C /* VideoDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDataModel.h; sourceTree = "<group>"; };
-		44C6EFC6216F4603009FA80C /* VideoDataModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoDataModel.mm; sourceTree = "<group>"; };
-		44C6EFC7216F4603009FA80C /* VideoInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoInfoModel.m; sourceTree = "<group>"; };
-		44C6EFC9216F4603009FA80C /* DKVideoListInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoListInfo.h; sourceTree = "<group>"; };
 		44C6EFCC216F4603009FA80C /* DKVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKVideoViewController.h; sourceTree = "<group>"; };
 		44C6EFCD216F4603009FA80C /* DKViaWWANViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKViaWWANViewController.h; sourceTree = "<group>"; };
 		44C6EFCE216F4603009FA80C /* DKGameMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKGameMainViewController.m; sourceTree = "<group>"; };
@@ -163,10 +187,6 @@
 		44C6EFF7216F4603009FA80C /* UIButton+DKFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DKFont.h"; sourceTree = "<group>"; };
 		44C6EFF8216F4603009FA80C /* UIViewController+InteractivePushGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+InteractivePushGesture.h"; sourceTree = "<group>"; };
 		44C6EFF9216F4603009FA80C /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		44C6EFFB216F4603009FA80C /* NetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkRequest.m; sourceTree = "<group>"; };
-		44C6EFFC216F4603009FA80C /* DKNetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKNetInfo.m; sourceTree = "<group>"; };
-		44C6EFFD216F4603009FA80C /* NetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkRequest.h; sourceTree = "<group>"; };
-		44C6EFFE216F4603009FA80C /* DKNetInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKNetInfo.h; sourceTree = "<group>"; };
 		44C6F002216F4603009FA80C /* DKMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKMineViewController.m; sourceTree = "<group>"; };
 		44C6F003216F4603009FA80C /* DKMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKMineViewController.h; sourceTree = "<group>"; };
 		44C6F008216F4603009FA80C /* DKTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKTabBarViewController.h; sourceTree = "<group>"; };
@@ -195,6 +215,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440D018921C0BAC10075AEB7 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				440D018E21C0BAC10075AEB7 /* NetworkRequest.h */,
+				440D018A21C0BAC10075AEB7 /* NetworkRequest.m */,
+				440D018D21C0BAC10075AEB7 /* DKBaseNetProtocol.h */,
+				440D018B21C0BAC10075AEB7 /* DKBaseNetProtocol.m */,
+				440D018F21C0BAC10075AEB7 /* DKNetInfo.h */,
+				440D018C21C0BAC10075AEB7 /* DKNetInfo.m */,
+			);
+			name = NetWork;
+			path = DKPlayerVideo/Classes/NetWork;
+			sourceTree = SOURCE_ROOT;
+		};
+		440D019A21C230490075AEB7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				440D01AB21C238A30075AEB7 /* DKDeviceInfo.h */,
+				440D01AA21C238A30075AEB7 /* DKDeviceInfo.m */,
+				440D019B21C2306A0075AEB7 /* DKRegularVerifyUtil.h */,
+				440D019C21C2306A0075AEB7 /* DKRegularVerifyUtil.m */,
+			);
+			name = Tools;
+			path = DKPlayerVideo/Classes/Tools;
+			sourceTree = SOURCE_ROOT;
+		};
+		440D01A521C236DA0075AEB7 /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				440D01A621C236F70075AEB7 /* UIViewController+DKToast.h */,
+				440D01A721C236F70075AEB7 /* UIViewController+DKToast.m */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		440D01B021C268E80075AEB7 /* YPDouYinLikeAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				440D01B121C268E80075AEB7 /* YPDouYinLikeAnimation.h */,
+				440D01B221C268E80075AEB7 /* YPDouYinLikeAnimation.m */,
+				440D01B421C26A500075AEB7 /* yp_video_like@2x.png */,
+				440D01B521C26A500075AEB7 /* yp_video_like@3x.png */,
+			);
+			path = YPDouYinLikeAnimation;
+			sourceTree = "<group>";
+		};
 		4461F6BE216F43340051E942 = {
 			isa = PBXGroup;
 			children = (
@@ -299,7 +365,9 @@
 				44C6EFBC216F4603009FA80C /* welfare */,
 				44C6EFFF216F4603009FA80C /* Mine */,
 				44C6EFED216F4603009FA80C /* Category */,
+				440D018921C0BAC10075AEB7 /* NetWork */,
 				44C6EFFA216F4603009FA80C /* OthetInfo */,
+				440D019A21C230490075AEB7 /* Tools */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -351,10 +419,8 @@
 		44C6EFC3216F4603009FA80C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				44C6EFC5216F4603009FA80C /* VideoDataModel.h */,
-				44C6EFC6216F4603009FA80C /* VideoDataModel.mm */,
-				44C6EFC4216F4603009FA80C /* VideoInfoModel.h */,
-				44C6EFC7216F4603009FA80C /* VideoInfoModel.m */,
+				440D019721C0E8A80075AEB7 /* DKVideoModel.h */,
+				440D019821C0E8A80075AEB7 /* DKVideoModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,7 +428,7 @@
 		44C6EFC8216F4603009FA80C /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				44C6EFC9216F4603009FA80C /* DKVideoListInfo.h */,
+				440D01B021C268E80075AEB7 /* YPDouYinLikeAnimation */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -416,6 +482,7 @@
 		44C6EFED216F4603009FA80C /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				440D01A521C236DA0075AEB7 /* Toast */,
 				44B5216521AF9231002CD444 /* Log */,
 				44C6EFEE216F4603009FA80C /* UIImage+DKImage.h */,
 				44C6EFF4216F4603009FA80C /* UIImage+DKImage.m */,
@@ -438,12 +505,10 @@
 		44C6EFFA216F4603009FA80C /* OthetInfo */ = {
 			isa = PBXGroup;
 			children = (
-				44C6EFFD216F4603009FA80C /* NetworkRequest.h */,
-				44C6EFFB216F4603009FA80C /* NetworkRequest.m */,
-				44C6EFFE216F4603009FA80C /* DKNetInfo.h */,
-				44C6EFFC216F4603009FA80C /* DKNetInfo.m */,
+				440D019621C0E37F0075AEB7 /* Config.h */,
 				44B5215F21AD507E002CD444 /* DKContentInfo.h */,
 				44B5216421AF83E2002CD444 /* DKAPI.h */,
+				440D01A921C238390075AEB7 /* ViewConstant.h */,
 			);
 			path = OthetInfo;
 			sourceTree = "<group>";
@@ -461,6 +526,8 @@
 		44C6F000216F4603009FA80C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				440D01AD21C2416F0075AEB7 /* DKUser.h */,
+				440D01AE21C2416F0075AEB7 /* DKUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -602,8 +669,10 @@
 			files = (
 				44B5215B21ABF285002CD444 /* GKNavigationBarViewController.bundle in Resources */,
 				44C6F030216F460D009FA80C /* video01.json in Resources */,
+				440D01B621C26A500075AEB7 /* yp_video_like@2x.png in Resources */,
 				4461F6D7216F43360051E942 /* LaunchScreen.storyboard in Resources */,
 				4461F6D4216F43360051E942 /* Assets.xcassets in Resources */,
+				440D01B721C26A500075AEB7 /* yp_video_like@3x.png in Resources */,
 				4461F6D2216F43340051E942 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -654,11 +723,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				44C6F029216F4603009FA80C /* NetworkRequest.m in Sources */,
 				44B5213221A6566C002CD444 /* DKTextView.m in Sources */,
 				44C6F024216F4603009FA80C /* UIViewController+InteractivePushGesture.m in Sources */,
 				440D018521BFA9EC0075AEB7 /* UIDevice+DKDevice.m in Sources */,
 				44B5215321ABF285002CD444 /* GKPopTransitionAnimation.m in Sources */,
+				440D019021C0BAC10075AEB7 /* NetworkRequest.m in Sources */,
 				44B5215D21ABF285002CD444 /* GKNavigationBarConfigure.m in Sources */,
 				44C6F023216F4603009FA80C /* UIView+Frame.m in Sources */,
 				44C6F028216F4603009FA80C /* UIColor+Extension.m in Sources */,
@@ -670,8 +739,10 @@
 				44C6F025216F4603009FA80C /* UIButton+DKFont.m in Sources */,
 				44C6F020216F4603009FA80C /* DKGameVideoListCell.m in Sources */,
 				44B5212621A4051F002CD444 /* DKVideoView.m in Sources */,
+				440D019D21C2306A0075AEB7 /* DKRegularVerifyUtil.m in Sources */,
 				44C6F018216F4603009FA80C /* DKVideoCell.m in Sources */,
 				44B5215821ABF285002CD444 /* UINavigationItem+GKCategory.m in Sources */,
+				440D01AC21C238A30075AEB7 /* DKDeviceInfo.m in Sources */,
 				44B5212F21A426DF002CD444 /* DKReplyCell.m in Sources */,
 				44C6F017216F4603009FA80C /* DKVideoViewController.m in Sources */,
 				44C6F02C216F4603009FA80C /* DKTabBarViewController.m in Sources */,
@@ -679,7 +750,7 @@
 				44C6F01B216F4603009FA80C /* DKGameMsgCell.m in Sources */,
 				44B5215721ABF285002CD444 /* UIScrollView+GKCategory.m in Sources */,
 				44B5216B21AF9260002CD444 /* NSDictionary+Log.m in Sources */,
-				44C6F02A216F4603009FA80C /* DKNetInfo.m in Sources */,
+				440D01A821C236F70075AEB7 /* UIViewController+DKToast.m in Sources */,
 				44C6F01C216F4603009FA80C /* QCXCollectionViewLayout.m in Sources */,
 				44B5212C21A41BE8002CD444 /* DKEvaluateCell.m in Sources */,
 				44C6F00F216F4603009FA80C /* DKWelfareViewController.m in Sources */,
@@ -687,7 +758,6 @@
 				44C6F02E216F4603009FA80C /* DKNavigationController.m in Sources */,
 				44C6F026216F4603009FA80C /* UIImage+DKImage.m in Sources */,
 				44B5212021A3F780002CD444 /* DKEvaluateViewController.m in Sources */,
-				44C6F011216F4603009FA80C /* VideoInfoModel.m in Sources */,
 				44C6F037217443C4009FA80C /* DKGameImageCell.m in Sources */,
 				44B5215C21ABF285002CD444 /* GKNavigationBarViewController.m in Sources */,
 				44B5215221ABF285002CD444 /* GKDelegateHandler.m in Sources */,
@@ -696,14 +766,18 @@
 				44C6F021216F4603009FA80C /* DKVideoLeftView.m in Sources */,
 				4461F6CC216F43340051E942 /* AppDelegate.m in Sources */,
 				44B5216E21AF9A29002CD444 /* DKLoginViewController.m in Sources */,
+				440D01AF21C2416F0075AEB7 /* DKUser.m in Sources */,
+				440D01B321C268E80075AEB7 /* YPDouYinLikeAnimation.m in Sources */,
 				44C6F01A216F4603009FA80C /* DKProgramView.m in Sources */,
-				44C6F010216F4603009FA80C /* VideoDataModel.mm in Sources */,
 				44B5215521ABF285002CD444 /* UIViewController+GKRotation.m in Sources */,
 				44C6F027216F4603009FA80C /* UILabel+MBCategory.m in Sources */,
 				44B5212921A41BBE002CD444 /* DKBaseTableViewCell.m in Sources */,
 				44C6F02B216F4603009FA80C /* DKMineViewController.m in Sources */,
 				44B5215421ABF285002CD444 /* UINavigationController+GKCategory.m in Sources */,
 				44C6F016216F4603009FA80C /* DKViaWWANViewController.m in Sources */,
+				440D019121C0BAC10075AEB7 /* DKBaseNetProtocol.m in Sources */,
+				440D019221C0BAC10075AEB7 /* DKNetInfo.m in Sources */,
+				440D019921C0E8A80075AEB7 /* DKVideoModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

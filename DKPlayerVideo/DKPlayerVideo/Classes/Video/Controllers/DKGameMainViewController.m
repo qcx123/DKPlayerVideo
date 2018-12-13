@@ -10,7 +10,6 @@
 #import "DKGameMsgCell.h"
 #import "DKGameGiftCell.h"
 #import "DKGameVideoListCell.h"
-#import "DKVideoListInfo.h"
 
 @interface DKGameMainViewController ()<UITableViewDelegate,UITableViewDataSource>
 

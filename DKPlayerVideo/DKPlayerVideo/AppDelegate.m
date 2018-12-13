@@ -73,32 +73,37 @@
                 
             case AFNetworkReachabilityStatusUnknown:
                 [DKNetInfo shareInstance].netType = NetType_Unknown;
+                [DKNetInfo shareInstance].net = @"unknown";
                 NSLog(@"未知");
                 
                 break;
                 
             case AFNetworkReachabilityStatusNotReachable:
                 [DKNetInfo shareInstance].netType = NetType_No;
+                [DKNetInfo shareInstance].net = @"no";
                 NSLog(@"没有网络");
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWWAN:
                 [DKNetInfo shareInstance].netType = NetType_3G4G;
+                [DKNetInfo shareInstance].net = @"3G/4G";
                 NSLog(@"3G|4G");
                 break;
                 
             case AFNetworkReachabilityStatusReachableViaWiFi:
                 [DKNetInfo shareInstance].netType = NetType_WIFI;
+                [DKNetInfo shareInstance].net = @"wifi";
                 NSLog(@"WiFi");
                 
                 break;
                 
             default:
                 [DKNetInfo shareInstance].netType = NetType_Unknown;
+                [DKNetInfo shareInstance].net = @"unknown";
                 break;
                 
         }
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"netWorkChangeEventNotification" object:@(status)];
+        [[NSNotificationCenter defaultCenter] postNotificationName:NetWorkChangeEventNotification object:@(status)];
     }];
     
     [manager startMonitoring];//开始监听

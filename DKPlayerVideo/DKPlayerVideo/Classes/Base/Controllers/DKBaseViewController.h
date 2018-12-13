@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "UIDevice+DKDevice.h"
 
+
 @interface DKBaseViewController : UIViewController
 ///**
 // 导航栏
@@ -39,5 +40,7 @@
 - (void)leftBtnAction:(UIButton *)btn;
 
 - (void)rightBtnAction:(UIButton *)btn;
+
+
 
 @end

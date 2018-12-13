@@ -8,14 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <TXVodPlayer.h>
-#import "VideoInfoModel.h"
+#import "DKVideoModel.h"
+
 #import "DKProgramView.h"
 
 typedef enum : NSUInteger {
     ActionType_Share,       // 分享
     ActionType_Like,        // 点赞
     ActionType_DownLoad,    // 下载
-    ActionType_Evaluate,// 评论
+    ActionType_Evaluate,    // 评论
     ActionType_Orientation  // 方向
 } ActionType;
 
@@ -23,14 +24,14 @@ typedef enum : NSUInteger {
 - (void)netSign;
 - (void)playStateChange:(NSInteger)state;
 
-- (void)actionWithType:(ActionType)actionType model:(VideoInfoModel *)model;
+- (void)actionWithType:(ActionType)actionType model:(DKVideoModel *)model;
 @end
 
 @interface DKVideoCell : UICollectionViewCell
 @property (nonatomic, strong) TXVodPlayer *player;
 @property (nonatomic, weak) id<DKVideoCellDelegate> delegate;
 @property (nonatomic, assign) BOOL isPlaying;
-@property (nonatomic, strong) VideoInfoModel *model;
+@property (nonatomic, strong) DKVideoModel *model;
 /**
  是否预加载
  */

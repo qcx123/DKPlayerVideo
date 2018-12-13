@@ -9,7 +9,6 @@
 #import "DKGameVideoListCell.h"
 #import "DKGameImageCell.h"
 #import "QCXCollectionViewLayout.h"
-#import "DKVideoListInfo.h"
 #import "UIButton+DKFont.h"
 
 @interface DKGameVideoListCell ()<UICollectionViewDelegate,UICollectionViewDataSource,QCXCollectionViewLayoutDelegate>

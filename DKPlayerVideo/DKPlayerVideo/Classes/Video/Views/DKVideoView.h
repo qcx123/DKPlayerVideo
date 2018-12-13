@@ -16,11 +16,16 @@ typedef enum {// 播放状态
     PlayerState_Stop  // 结束
 }PlayerState;
 
+typedef enum : NSUInteger {
+    RequestType_Refresh, // 刷新
+    RequestType_More     // 请求更多
+} RequestType;
+
 @protocol DKVideoViewDelegate <NSObject>
 - (void)netSign;
 - (void)playStateChange:(NSInteger)state;
 
-- (void)actionWithType:(ActionType)actionType model:(VideoInfoModel *)model;
+- (void)actionWithType:(ActionType)actionType model:(DKVideoModel *)model;
 @end
 
 @interface DKVideoView : UIView
@@ -33,9 +38,11 @@ typedef enum {// 播放状态
 @property (nonatomic, strong) NSArray *visibleCellsArray;
 @property (nonatomic, assign) PlayerState playerState;
 @property (nonatomic, assign) float currentPlaybackTime;
+@property (nonatomic, assign) NSInteger   currentPageNum;
 @property (nonatomic, strong) UIImageView *bgView;
 @property (nonatomic, weak)   id<DKVideoViewDelegate> delegate;
 
 - (void)reloadData;
 - (void)setFrame;
+- (void)requestVideoListWithRequestType:(RequestType)requestType;
 @end

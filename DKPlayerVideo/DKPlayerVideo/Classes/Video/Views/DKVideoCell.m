@@ -9,6 +9,7 @@
 #import "DKVideoCell.h"
 #import "UIColor+Extension.h"
 #import "DKNetInfo.h"
+#import "YPDouYinLikeAnimation.h"
 #import <UIImageView+WebCache.h>
 
 @interface DKVideoCell ()<TXVodPlayListener>
@@ -27,7 +28,7 @@
 /**
  头像
  */
-@property (nonatomic, strong) UIButton *headerBtn;
+@property (nonatomic, strong) UIImageView *authorIcon;
 /**
  方向按钮
  */
@@ -51,7 +52,7 @@
 /**
  @label
  */
-@property (nonatomic, strong) UILabel *atLabel;
+@property (nonatomic, strong) UILabel *authorNameLabel;
 /**
  描述
  */
@@ -72,10 +73,6 @@
  游戏描述
  */
 @property (nonatomic, strong) UILabel *gameDescriptionLabel;
-/**
- player方向
- */
-@property (nonatomic, assign) TX_Enum_Type_HomeOrientation playerOrientation;
 @end
 
 @implementation DKVideoCell
@@ -83,7 +80,6 @@
     if (self = [super initWithFrame:frame]) {
         [self setupUI];
         [self initPlayer];
-        _playerOrientation = HOME_ORIENTATION_DOWN;
         [self addObserver];
     }
     return self;
@@ -187,10 +183,19 @@
     }
 }
 
-- (void)setModel:(VideoInfoModel *)model{
+- (void)setModel:(DKVideoModel *)model{
     _model = model;
     _progressView.progress = 0.0;
-    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:_model.coverImageAddress] placeholderImage:[UIImage imageNamed:@"bg_noNet"]];
+    [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:_model.coverUrl] placeholderImage:[UIImage imageNamed:@"bg_noNet"]];
+    [self.authorIcon sd_setImageWithURL:[NSURL URLWithString:_model.authorIcon]];
+    [self.gameIcon sd_setImageWithURL:[NSURL URLWithString:_model.icon]];
+    self.authorNameLabel.text = _model.author;
+    self.descriptionLabel.text = _model.content;
+    self.gameNameLabel.text = _model.gameName;
+    [self.likeBtn setTitle:[self showTimes:_model.praiseTimes] forState:(UIControlStateNormal)];
+    [self.shareBtn setTitle:[self showTimes:_model.forwardTimes] forState:(UIControlStateNormal)];
+    [self.evaluateBtn setTitle:[self showTimes:_model.commentTimes] forState:(UIControlStateNormal)];
+    self.directionBtn.hidden = _model.horizontal == 1 ? YES : NO;
     if ([_player isPlaying]) {
         [_player stopPlay];
     }
@@ -206,7 +211,7 @@
 - (int)play{
     self.playImgView.hidden = YES;
     if (_model) {
-        int isSuccess = [self.player startPlay:_model.VideoAddress];
+        int isSuccess = [self.player startPlay:_model.videoUrl];
         
         if ([DKNetInfo shareInstance].netType == NetType_3G4G && [DKNetInfo shareInstance].isAllow3G4GPlay == NO) {
             [_player pause];
@@ -330,6 +335,22 @@
     }
 }
 
+#pragma mark -点击事件-
+
+- (void)doubleTapAction:(UITapGestureRecognizer *)tap{
+    [[YPDouYinLikeAnimation shareInstance] createAnimationWithTap:tap];
+}
+
+- (void)singleTapAction:(UITapGestureRecognizer *)tap{
+    if ([self isPlaying]) {
+        [self pause];
+//        _playerState = PlayerState_Pause;
+    }else{
+        [self resume];
+//        _playerState = PlayerState_Play;
+    }
+}
+
 #pragma mark -lazy-
 
 - (UIView *)playerView{
@@ -351,13 +372,20 @@
         [_controlView addSubview:self.shareBtn];
         [_controlView addSubview:self.likeBtn];
         [_controlView addSubview:self.evaluateBtn];
-        [_controlView addSubview:self.headerBtn];
+        [_controlView addSubview:self.authorIcon];
         [_controlView addSubview:self.downloadBtn];
-        [_controlView addSubview:self.atLabel];
+        [_controlView addSubview:self.authorNameLabel];
         [_controlView addSubview:self.descriptionLabel];
         [_controlView addSubview:self.playImgView];
         
         self.playImgView.hidden = YES;
+        
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapAction:)];
+        doubleTap.numberOfTapsRequired = 2; // 双击
+        [_controlView addGestureRecognizer:doubleTap];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
+        singleTap.numberOfTapsRequired = 1; // 单击
+        [_controlView addGestureRecognizer:singleTap];
     }
     return _controlView;
 }
@@ -369,15 +397,12 @@
     return _progressView;
 }
 
-- (UIButton *)headerBtn{
-    if (!_headerBtn) {
-        _headerBtn = [UIButton buttonWithType:(UIButtonTypeCustom)];
-        [_headerBtn setImage:[UIImage imageNamed:@"btn_tx"] forState:(UIControlStateNormal)];
-        [_headerBtn setBackgroundImage:[UIImage imageNamed:@"btn_bjy"] forState:(UIControlStateNormal)];
-        //        _headerBtn.frame = CGRectMake(0, 0, 50, 50);
-        //        [self setButtonContentCenter:_headerBtn];
+- (UIImageView *)authorIcon{
+    if (!_authorIcon) {
+        _authorIcon = [[UIImageView alloc] init];
+        _authorIcon.contentMode = UIViewContentModeScaleAspectFit;
     }
-    return _headerBtn;
+    return _authorIcon;
 }
 
 - (UIButton *)directionBtn{
@@ -442,14 +467,14 @@
     return _downloadBtn;
 }
 
-- (UILabel *)atLabel{
-    if (!_atLabel) {
-        _atLabel = [[UILabel alloc] init];
-        _atLabel.textColor = [UIColor colorWithHexString:@"#ffffff"];
-        _atLabel.font = [UIFont systemFontOfSize:16];
-        _atLabel.text = @"春晓";
+- (UILabel *)authorNameLabel{
+    if (!_authorNameLabel) {
+        _authorNameLabel = [[UILabel alloc] init];
+        _authorNameLabel.textColor = [UIColor colorWithHexString:@"#ffffff"];
+        _authorNameLabel.font = [UIFont systemFontOfSize:16];
+        _authorNameLabel.text = @"春晓";
     }
-    return _atLabel;
+    return _authorNameLabel;
 }
 
 - (UILabel *)descriptionLabel{
@@ -586,15 +611,15 @@
             make.height.lessThanOrEqualTo(@45);
         }];
         
-        [self.headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.authorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.controlView).mas_offset(10);
             make.bottom.equalTo(self.descriptionLabel.mas_top).mas_offset(-8);
             make.width.height.mas_equalTo(30);
         }];
         
-        [self.atLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.headerBtn.mas_right).mas_offset(10);
-            make.centerY.mas_equalTo(self.headerBtn);
+        [self.authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.authorIcon.mas_right).mas_offset(10);
+            make.centerY.mas_equalTo(self.authorIcon);
             make.height.mas_equalTo(15);
         }];
         
@@ -668,15 +693,15 @@
             make.height.lessThanOrEqualTo(@45);
         }];
         
-        [self.headerBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        [self.authorIcon mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.controlView).mas_offset(10);
             make.bottom.equalTo(self.descriptionLabel.mas_top).mas_offset(-8);
             make.width.height.mas_equalTo(30);
         }];
         
-        [self.atLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.headerBtn.mas_right).mas_offset(10);
-            make.centerY.mas_equalTo(self.headerBtn);
+        [self.authorNameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.authorIcon.mas_right).mas_offset(10);
+            make.centerY.mas_equalTo(self.authorIcon);
             make.height.mas_equalTo(15);
         }];
         
@@ -770,15 +795,15 @@
             make.height.lessThanOrEqualTo(@45);
         }];
         
-        [self.headerBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [self.authorIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.controlView).mas_offset(10);
             make.bottom.equalTo(self.descriptionLabel.mas_top).mas_offset(-8);
             make.width.height.mas_equalTo(30);
         }];
         
-        [self.atLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.headerBtn.mas_right).mas_offset(10);
-            make.centerY.mas_equalTo(self.headerBtn);
+        [self.authorNameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.authorIcon.mas_right).mas_offset(10);
+            make.centerY.mas_equalTo(self.authorIcon);
             make.height.mas_equalTo(15);
         }];
         
@@ -852,15 +877,15 @@
             make.height.lessThanOrEqualTo(@45);
         }];
         
-        [self.headerBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
+        [self.authorIcon mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(self.controlView).mas_offset(10);
             make.bottom.equalTo(self.descriptionLabel.mas_top).mas_offset(-8);
             make.width.height.mas_equalTo(30);
         }];
         
-        [self.atLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(self.headerBtn.mas_right).mas_offset(10);
-            make.centerY.mas_equalTo(self.headerBtn);
+        [self.authorNameLabel mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(self.authorIcon.mas_right).mas_offset(10);
+            make.centerY.mas_equalTo(self.authorIcon);
             make.height.mas_equalTo(15);
         }];
         
@@ -884,6 +909,16 @@
             make.right.mas_equalTo(self.backView).mas_offset(-10);
         }];
     }
+}
+
+- (NSString *)showTimes:(NSInteger)times{
+    NSString *timesStr;
+    if (times >= 10000) {
+        timesStr = [NSString stringWithFormat:@"%.2lf",times / 10000.0];
+    }else{
+        timesStr = [NSString stringWithFormat:@"%ld",times];
+    }
+    return timesStr;
 }
 
 @end

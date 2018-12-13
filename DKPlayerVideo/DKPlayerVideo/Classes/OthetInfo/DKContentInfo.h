@@ -17,14 +17,10 @@
 #define MPMediaPlaybackIsPreparedToPlayDidChangeNotification @"MPMediaPlaybackIsPreparedToPlayDidChangeNotification"
 // 视频缩放通知
 #define DKMediaPlayZoomChangeNotification @"DKMediaPlayZoomChangeNotification"
+// 网络通知
+#define NetWorkChangeEventNotification    @"netWorkChangeEventNotification"
 
-#ifndef DEBUG
 
-#undef NSLog
-
-#define NSLog(args, ...)
-
-#endif
 
 #import "NetworkRequest.h"
 #import <Masonry.h>
@@ -38,5 +34,12 @@
 #define KScreenH ([UIScreen mainScreen].bounds.size.height)
 #define TabBar_HEIGHT 49.0f
 #define EvaluateViewHeightMultipliedBy 0.6  // 评论页高度相对于整个屏幕的百分比
+
+
+#ifdef DEBUG
+#define NSLog(...) printf("%s\n",[[NSString stringWithFormat:__VA_ARGS__]UTF8String]);
+#else
+#define NSLog(format, ...)
+#endif
 
 #endif /* DKContentInfo_h */

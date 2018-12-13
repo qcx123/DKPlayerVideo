@@ -7,12 +7,17 @@
 //
 
 #import "DKBaseViewController.h"
+#import <Masonry.h>
 
 @interface DKBaseViewController ()
 /**
  是否登录
  */
 @property (nonatomic, assign) BOOL isLoadin;
+/**
+ 吐司
+ */
+@property (nonatomic, strong) UILabel *toastLabel;
 @end
 
 @implementation DKBaseViewController

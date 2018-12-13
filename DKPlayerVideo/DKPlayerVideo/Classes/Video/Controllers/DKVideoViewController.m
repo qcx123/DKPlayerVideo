@@ -16,22 +16,24 @@
 #import "DKVideoView.h"
 #import "DKVideoLeftView.h"
 
-#import "VideoDataModel.h"
-#import "VideoInfoModel.h"
+#import "DKVideoModel.h"
+#import "DKBaseNetProtocol.h"
 
 #import <MJRefresh.h>
 #import "UIImage+DKImage.h"
 #import "UIColor+Extension.h"
-#import "UIViewController+InteractivePushGesture.h"
 #import <TXVodDownloadManager.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <StoreKit/StoreKit.h>
+#import <MJExtension.h>
 
-@interface DKVideoViewController ()<UIViewControllerInteractivePushGestureDelegate,DKVideoLeftViewDelegate,DKVideoViewDelegate,UIGestureRecognizerDelegate,SKStoreProductViewControllerDelegate,GKViewControllerPushDelegate>
+
+@interface DKVideoViewController ()<DKVideoLeftViewDelegate,DKVideoViewDelegate,UIGestureRecognizerDelegate,SKStoreProductViewControllerDelegate,GKViewControllerPushDelegate>
 @property (nonatomic, strong) MPVolumeView    *mpVolumeView;
 @property (nonatomic, strong) DKVideoView     *videoView;
 @property (nonatomic, strong) NSMutableArray  *dataArr;
+@property (nonatomic, strong) NSMutableArray  *videosArray;
 @property (nonatomic, strong) DKVideoCell     *currentCell;
 @property (nonatomic, strong) DKVideoLeftView *leftView;
 @property (nonatomic, strong) UIImageView     *noNetView;
@@ -52,7 +54,7 @@ static NSString *cellId = @"cellId";
         [self.videoView.currentCell resume];
     }
     self.gk_pushDelegate = self;
-    [self requestVideoList];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -76,8 +78,12 @@ static NSString *cellId = @"cellId";
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initUI];
-    [self proportyData];
+    self.videoView.currentPageNum = 1;
+    [self.videoView requestVideoListWithRequestType:(RequestType_Refresh)];
     [self addObserver];
+    [self requestVideoListWithRequestType:RequestType_Refresh];
+//    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panAction:)];
+//    [self.appDelegate.window addGestureRecognizer:pan];
 }
 
 - (void)setFrame{
@@ -99,7 +105,7 @@ static NSString *cellId = @"cellId";
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (enterForeground) name: UIApplicationWillEnterForegroundNotification object:nil];
     //注册程序进入后台通知
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector (enterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityStatusViaWWAN:) name:@"netWorkChangeEventNotification" object:nil];// 网络检测变化
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityStatusViaWWAN:) name:NetWorkChangeEventNotification object:nil];// 网络检测变化
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChanged:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];// 系统声音变化
 }
 
@@ -109,12 +115,17 @@ static NSString *cellId = @"cellId";
     [[NSNotificationCenter defaultCenter] removeObserver:self name: UIApplicationWillEnterForegroundNotification object:nil];
     //解除程序进入后台通知
     [[NSNotificationCenter defaultCenter] removeObserver:self name: UIApplicationDidEnterBackgroundNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"netWorkChangeEventNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NetWorkChangeEventNotification object:nil];
 //    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
 }
 
 - (void)dealloc{
     [self removeObserver];
+}
+
+- (void)panAction:(UIPanGestureRecognizer *)pan{
+    CGPoint point1 = [pan translationInView:self.view];
+    NSLog(@"point1.x = %f point1.y = %f",point1.x,point1.y);
 }
 
 -(void) initUI
@@ -293,7 +304,7 @@ static NSString *cellId = @"cellId";
     [self ViaWWAN];
 }
 
-- (void)actionWithType:(ActionType)actionType model:(VideoInfoModel *)model{
+- (void)actionWithType:(ActionType)actionType model:(DKVideoModel *)model{
     if (actionType == ActionType_Share) {// 分享
         NSLog(@"分享");
     }else if (actionType == ActionType_Like) {// 点赞
@@ -510,37 +521,6 @@ static NSString *cellId = @"cellId";
     }];
 }
 
-- (void)proportyData{
-    
-    NSMutableArray* tempAry = [NSMutableArray array];
-    NSMutableArray* mutableAry = [NSMutableArray array];
-    _dataArr = [NSMutableArray array];
-    __block DKVideoView *blockVideoView = _videoView;
-    NSString *str = @"";
-    __block NSString *blockStr = str;
-    [VideoDataModel getHomePageVideoDataWithBlock:^(NSArray *dateAry, NSError *error) {
-        [tempAry addObjectsFromArray:dateAry];
-        NSLog(@"-----------------------");
-        for (VideoDataModel* model in tempAry) {
-            VideoInfoModel * item = [[VideoInfoModel alloc] init];
-            item.VideoAddress = model.video_url;
-            NSLog(@"%@",item.VideoAddress);
-            item.coverImageAddress = model.cover_url;
-            [mutableAry addObject:item];
-            //        [str stringByAppendingString:[NSString stringWithFormat:@"%@,",item.VideoAddress]];
-            //        str = [NSString stringWithFormat:@"@\"%@\",@\"%@\"",str,item.VideoAddress];
-            blockStr = [NSString stringWithFormat:@"@\"%@\",@\"%@\"",blockStr,item.VideoAddress];
-        }
-        NSLog(@"%@",blockStr);
-        NSLog(@"-----------------------");
-        [self.dataArr addObjectsFromArray:mutableAry];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            blockVideoView.dataArr = self.dataArr;
-        });
-    }];
-    
-}
-
 -(BOOL)prefersStatusBarHidden{
     return YES;// 返回YES表示隐藏，返回NO表示显示
 }
@@ -549,18 +529,33 @@ static NSString *cellId = @"cellId";
     [super didReceiveMemoryWarning];
 }
 
-
 #pragma netWork
 
-- (void)requestVideoList{
-    NSDictionary *parame = @{@"pageNum":@1,@"pageSize":@20};
-    [NetworkRequest sendDataWithUrl:AddAdminRecommendURL parameters:parame successResponse:^(id data) {
-        
+- (void)requestVideoListWithRequestType:(RequestType)requestType{
+    NSMutableDictionary *parame = [DKBaseNetProtocol getBody];
+    //    _currentPageNum = requestType == RequestType_Refresh ? 1 : (_currentPageNum + 1);
+    //    [parame setValue:@(_currentPageNum) forKey:@"pageNum"];
+    //    [parame setValue:PageSize forKey:@"pageSize"];
+    [NetworkRequest sendDataWithUrl:VideoListURL parameters:parame successResponse:^(id data) {
+        if ([data[@"code"] isEqualToString:@"200"]) {
+            NSArray *arr = data[@"result"];
+            if (requestType == RequestType_Refresh) {
+                [self.dataArr removeAllObjects];
+                self.dataArr = nil;
+                self.dataArr = [DKVideoModel mj_objectArrayWithKeyValuesArray:arr];
+            }else{
+                NSMutableArray *array = [DKVideoModel mj_objectArrayWithKeyValuesArray:arr];
+                [self.dataArr addObjectsFromArray:array];
+            }
+            NSLog(@"=======%@",self.dataArr);
+            
+        }else{
+            NSLog(@"失败");
+        }
     } failure:^(NSError *error) {
         
     }];
 }
-
 
 /*
 #pragma mark - Navigation

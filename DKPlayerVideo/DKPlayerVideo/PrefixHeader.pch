@@ -11,7 +11,7 @@
 
 #import "DKContentInfo.h"
 #import "DKAPI.h"
-
-
+#import "Config.h"
+#import "ViewConstant.h"
 
 #endif /* PrefixHeader_pch */

@@ -7,6 +7,11 @@
 //
 
 #import "DKLoginViewController.h"
+#import "DKRegularVerifyUtil.h"
+#import "UIViewController+DKToast.h"
+#import "DKBaseNetProtocol.h"
+#import "DKUser.h"
+
 
 @interface DKLoginViewController ()
 /**
@@ -169,7 +174,7 @@
         _phoneTextField.backgroundColor = RGBColor(22, 22, 22, 1);
         _phoneTextField.textColor = [UIColor whiteColor];
         _phoneTextField.placeholder = @"优质评论将会优先展示";
-//        _phoneTextField.placeholderColor = [UIColor whiteColor];
+        _phoneTextField.keyboardType = UIKeyboardTypePhonePad;
         _phoneTextField.font = [UIFont systemFontOfSize:14];
     }
     return _phoneTextField;
@@ -181,7 +186,7 @@
         _codeTextField.backgroundColor = RGBColor(22, 22, 22, 1);
         _codeTextField.textColor = [UIColor whiteColor];
         _codeTextField.placeholder = @"优质评论将会优先展示";
-        //        _codeTextField.placeholderColor = [UIColor whiteColor];
+        _codeTextField.keyboardType = UIKeyboardTypeNumberPad;
         _codeTextField.font = [UIFont systemFontOfSize:14];
     }
     return _codeTextField;
@@ -232,12 +237,83 @@
 #pragma mark -click-
 
 - (void)countdownBtnClick:(UIButton *)btn {
-    
+    [self.view endEditing:YES];
+    if ([_phoneTextField.text isEqualToString:@""]) {
+        [self makeToastWithMessage:@"电话号码不能为空" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+        return;
+    }else if(![DKRegularVerifyUtil checkIsPhoneNum:_phoneTextField.text]){
+        [self makeToastWithMessage:@"电话号码错误" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+        return;
+    }
+    NSMutableDictionary *parame = [DKBaseNetProtocol getBody];
+    [parame setValue:_phoneTextField.text forKey:@"mobile"];
+    [NetworkRequest sendDataWithUrl:SendCodeURL parameters:parame successResponse:^(id data) {
+        if ([data[@"code"] isEqualToString:@"200"]) {
+            
+        }else{
+            [self makeToastWithMessage:data[@"message"] duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+        }
+    } failure:^(NSError *error) {
+        [self makeToastWithMessage:@"获取验证码失败" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+    }];
 }
 
 - (void)loginAndRegisteredBtnClick:(UIButton *)btn {
+    [self.view endEditing:YES];
+//    if ([DKUser shareDKUser].isLogin == YES) {
+//        [NetworkRequest sendDataWithUrl:QuitURL parameters:nil successResponse:^(id data) {
+//            if ([data[@"code"] isEqualToString:@"200"]) {
+//                [DKUser shareDKUser].isLogin = NO;
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self closeBtnClick];
+//                });
+//            }else{
+//                [self makeToastWithMessage:data[@"message"] duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+//            }
+//        } failure:^(NSError *error) {
+//            [self makeToastWithMessage:@"登出失败" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+//        }];
+//    }else{
+//        if ([_codeTextField.text isEqualToString:@""]) {
+//            [self makeToastWithMessage:@"验证码不能为空" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+//            return;
+//        }
+//        NSMutableDictionary *parame = [DKBaseNetProtocol getBody];
+//        [parame setValue:_phoneTextField.text forKey:@"mobile"];
+//        [parame setValue:_codeTextField.text forKey:@"code"];
+//        [NetworkRequest sendDataWithUrl:MobileURL parameters:parame successResponse:^(id data) {
+//            if ([data[@"code"] isEqualToString:@"200"]) {
+//                [DKUser shareDKUser].isLogin = YES;
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    [self closeBtnClick];
+//                });
+//            }else{
+//                [self makeToastWithMessage:data[@"message"] duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+//            }
+//        } failure:^(NSError *error) {
+//            [self makeToastWithMessage:@"登录失败" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+//        }];
+//    }
+    if ([_codeTextField.text isEqualToString:@""]) {
+        [self makeToastWithMessage:@"验证码不能为空" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+        return;
+    }
+    NSMutableDictionary *parame = [DKBaseNetProtocol getBody];
+    [parame setValue:_phoneTextField.text forKey:@"mobile"];
+    [parame setValue:_codeTextField.text forKey:@"code"];
+    [NetworkRequest sendDataWithUrl:MobileURL parameters:parame successResponse:^(id data) {
+        if ([data[@"code"] isEqualToString:@"200"]) {
+            [DKUser shareDKUser].isLogin = YES;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self closeBtnClick];
+            });
+        }else{
+            [self makeToastWithMessage:data[@"message"] duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+        }
+    } failure:^(NSError *error) {
+        [self makeToastWithMessage:@"登录失败" duration:kCommonToastDurationTime position:(PositionType_Bottom)];
+    }];
     
-//    [NetworkRequest sendDataWithUrl:MobileURL parameters:<#(id)#> successResponse:<#^(id data)success#> failure:<#^(NSError *error)failure#>];
 }
 
 - (void)layout{

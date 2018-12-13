@@ -7,6 +7,11 @@
 //
 
 #import "DKVideoView.h"
+#import "DKBaseNetProtocol.h"
+
+#import <MJExtension.h>
+
+
 
 @interface DKVideoView ()<UICollectionViewDelegate,UICollectionViewDataSource,DKVideoCellDelegate>
 
@@ -38,7 +43,7 @@ static NSString *cellId = @"cellId";
     DKVideoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
     cell.delegate = self;
     _playerState = PlayerState_Init;
-    VideoInfoModel *model = _dataArr[indexPath.item];
+    DKVideoModel *model = _dataArr[indexPath.item];
     cell.model = model;
     if (!_currentCell) {
         _currentCell = cell;
@@ -51,15 +56,21 @@ static NSString *cellId = @"cellId";
     return cell;
 }
 
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    DKVideoCell * cell = (DKVideoCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    if ([cell isPlaying]) {
-        [cell pause];
-        _playerState = PlayerState_Pause;
-    }else{
-        [cell resume];
-        _playerState = PlayerState_Play;
+//    DKVideoCell * cell = (DKVideoCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//    if ([cell isPlaying]) {
+//        [cell pause];
+//        _playerState = PlayerState_Pause;
+//    }else{
+//        [cell resume];
+//        _playerState = PlayerState_Play;
+//    }
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.item == self.dataArr.count - 1) {
+        [self requestVideoListWithRequestType:(RequestType_More)];
     }
 }
 
@@ -219,11 +230,38 @@ static NSString *cellId = @"cellId";
     }
 }
 
-- (void)actionWithType:(ActionType)actionType model:(VideoInfoModel *)model{
+- (void)actionWithType:(ActionType)actionType model:(DKVideoModel *)model{
     if ([self.delegate respondsToSelector:@selector(actionWithType:model:)]) {
         [self.delegate actionWithType:actionType model:model];
     }
 }
 
+#pragma netWork
+
+- (void)requestVideoListWithRequestType:(RequestType)requestType{
+    NSMutableDictionary *parame = [DKBaseNetProtocol getBody];
+//    _currentPageNum = requestType == RequestType_Refresh ? 1 : (_currentPageNum + 1);
+//    [parame setValue:@(_currentPageNum) forKey:@"pageNum"];
+//    [parame setValue:PageSize forKey:@"pageSize"];
+    [NetworkRequest sendDataWithUrl:ListURL parameters:parame successResponse:^(id data) {
+        if ([data[@"code"] isEqualToString:@"200"]) {
+            NSArray *arr = data[@"result"];
+            if (requestType == RequestType_Refresh) {
+                [self.dataArr removeAllObjects];
+                self.dataArr = nil;
+                self.dataArr = [DKVideoModel mj_objectArrayWithKeyValuesArray:arr];
+            }else{
+                NSMutableArray *array = [DKVideoModel mj_objectArrayWithKeyValuesArray:arr];
+                [self.dataArr addObjectsFromArray:array];
+            }
+//            NSLog(@"%@",self.dataArr);
+            [self reloadData];
+        }else{
+            NSLog(@"失败");
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 
 @end
