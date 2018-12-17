@@ -386,6 +386,8 @@
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapAction:)];
         singleTap.numberOfTapsRequired = 1; // 单击
         [_controlView addGestureRecognizer:singleTap];
+        // 关键在这一行，双击手势确定监测失败才会触发单击手势的相应操作
+        [singleTap requireGestureRecognizerToFail:doubleTap];
     }
     return _controlView;
 }
